@@ -10,7 +10,7 @@ import { presetExtra } from 'unocss-preset-extra'
 export default defineConfig({
   shortcuts: [
     ['row', 'flex flex-row items-center'],
-    ['col', 'flex flex-col justify-stretch'],
+    ['col', 'flex flex-col'],
   ],
   presets: [
     presetUno(),
