@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`component of Footer.vue > should render 1`] = `
+"<nav mt-6="" inline-flex="" gap-2="" text-xl=""><button class="toggle-dark" icon-btn="">
+    <div i-carbon-sun="" dark:i-carbon-moon=""></div>
+  </button></nav>"
+`;

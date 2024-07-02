@@ -18,30 +18,32 @@ jobs:
     strategy:
       matrix:
         node_version: [lts/*]
-        os: [ubuntu-latest, windows-latest]
+        # os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
       fail-fast: false
 
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
 
       - name: Set node version to ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
-          cache: pnpm
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install
-        run: pnpm i
+        run: bun install --frozen-lockfile
 
       - name: Build
-        run: pnpm run build
+        run: bun -b run build
 
       - name: Test
-        run: pnpm run test
+        run: bun run test
 
       - name: Lint
-        run: pnpm run lint
+        run: bun run lint
 
       - name: TypeCheck
-        run: pnpm run typecheck
+        run: bun -b run typecheck

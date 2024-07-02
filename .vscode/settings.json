@@ -3,6 +3,8 @@
     "*.css": "postcss"
   },
 
+  "vue.complete.casing.tags": "kebab",
+
   // Enable the ESlint flat config support
   "eslint.experimental.useFlatConfig": true,
 
