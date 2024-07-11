@@ -3,7 +3,7 @@
     "*.css": "postcss"
   },
 
-  "vue.complete.casing.tags": "kebab",
+  "vue.complete.casing.tags": "pascal",
 
   // Enable the ESlint flat config support
   "eslint.experimental.useFlatConfig": true,
