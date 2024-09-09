@@ -25,7 +25,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.4.1",
+    "@egoist/tailwindcss-icons": "^1.8.1",
     "@iconify-json/carbon": "^1.2.1",
+    "@iconify-json/line-md": "^1.2.1",
     "@types/node": "^20.16.5",
     "@vitejs/plugin-vue": "^5.1.3",
     "@vue-macros/volar": "^0.28.2",

@@ -17,6 +17,7 @@ export default antfu(
       'typed-router.d.ts',
       'public/',
       'src/assets/',
+      'src/components/ui/',
     ],
   },
   {

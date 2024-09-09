@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 
 import Vue from '@vitejs/plugin-vue'
+
 import autoprefixer from 'autoprefixer'
 import tailwind from 'tailwindcss'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -11,6 +12,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
+
 import TsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
@@ -20,7 +22,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    TsconfigPaths(),
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
@@ -30,6 +31,8 @@ export default defineConfig({
     VueMacros({
       defineOptions: false,
       defineModels: false,
+      // not compatible with Shadcn Vue
+      betterDefine: false,
       plugins: {
         vue: Vue({
           script: {
@@ -71,6 +74,8 @@ export default defineConfig({
 
     // https://devtools-next.vuejs.org
     VueDevTools(),
+
+    TsconfigPaths(),
   ],
 
   // https://github.com/vitest-dev/vitest
