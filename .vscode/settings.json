@@ -65,6 +65,7 @@
     "unplugin-*",
     "vite*",
     "vue-tsc",
-    "clsx"
+    "clsx",
+    "dayjs"
   ],
 }
