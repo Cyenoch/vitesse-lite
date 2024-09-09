@@ -2,11 +2,13 @@
   "files.associations": {
     "*.css": "postcss"
   },
+  "editor.linkedEditing": true,
+  "javascript.preferences.renameMatchingJsxTags": true,
+  "typescript.preferences.renameMatchingJsxTags": true,
+
+  "unocss.disable": true,
 
   "vue.complete.casing.tags": "pascal",
-
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
 
   // Disable the default formatter
   "prettier.enable": false,
@@ -16,6 +18,10 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
+  },
+
+  "editor.quickSuggestions": {
+    "strings": true
   },
 
   // Silent the stylistic rules in you IDE, but still auto fix them
@@ -46,5 +52,19 @@
     "json",
     "jsonc",
     "yaml"
-  ]
+  ],
+
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@antfu/eslint-config",
+    "@vitejs/plugin-vue",
+    "@vue-macros/volar",
+    "eslint*",
+    "jsdom",
+    "simple-git-hooks",
+    "taze",
+    "unplugin-*",
+    "vite*",
+    "vue-tsc",
+    "clsx"
+  ],
 }

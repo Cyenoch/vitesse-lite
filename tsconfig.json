@@ -7,7 +7,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
-      "~/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "types": [
@@ -16,7 +16,7 @@
       "unplugin-vue-router/client",
       "vite-plugin-vue-layouts/client"
     ],
-    "allowJs": true,
+    "allowJs": false,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
@@ -24,9 +24,9 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "exclude": [
-    "dist",
-    "node_modules",
-    "eslint.config.js"
+  "include": [
+    "./src/**/*",
+    "./*.d.ts",
+    "./vite.config.ts"
   ]
 }

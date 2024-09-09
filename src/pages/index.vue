@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T extends any, O extends any">
+<script setup lang="ts">
 defineOptions({
   name: 'IndexPage',
 })
@@ -7,5 +7,8 @@ defineOptions({
 <template>
   <div>
     Index page
+    <Button>
+      Hello
+    </Button>
   </div>
 </template>
