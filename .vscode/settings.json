@@ -51,7 +51,10 @@
     "markdown",
     "json",
     "jsonc",
-    "yaml"
+    "yaml",
+    "css",
+    "scss",
+    "postcss"
   ],
 
   "typescript.preferences.autoImportFileExcludePatterns": [
