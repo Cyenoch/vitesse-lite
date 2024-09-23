@@ -1,5 +1,12 @@
+<script setup>
+import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
+import { Toaster } from './components/ui/sonner'
+</script>
+
 <template>
-  <main font-sans>
+  <main>
     <RouterView />
+    <VueQueryDevtools />
+    <Toaster position="top-center" close-button />
   </main>
 </template>

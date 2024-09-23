@@ -1,16 +1,18 @@
-import { setupLayouts } from 'virtual:generated-layouts'
-import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router/auto'
-import { routes } from 'vue-router/auto-routes'
-import App from './App.vue'
+import { type App, createApp } from 'vue'
+import AppSFC from './App.vue'
 
 import './styles/main.css'
 
-const app = createApp(App)
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: setupLayouts(routes),
-})
+const app = createApp(AppSFC)
 
-app.use(router)
+Object.values(
+  import.meta.glob<{ install: (app: App) => void }>('./lib/modules/*.ts', {
+    eager: true,
+  }),
+).forEach(({
+  install,
+}) =>
+  install(app),
+)
+
 app.mount('#app')
