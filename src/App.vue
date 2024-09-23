@@ -10,3 +10,8 @@ import { Toaster } from './components/ui/sonner'
     <Toaster position="top-center" close-button />
   </main>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: empty
+</route>

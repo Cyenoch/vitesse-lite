@@ -29,6 +29,10 @@ function setI18nLanguage(lang: AvailableLocale) {
   return lang
 }
 
+export function getI18nInstance() {
+  return i18n.global
+}
+
 export async function loadLanguageAsync(lang: AvailableLocale): Promise<AvailableLocale> {
   // If the same language
   if (i18n.global.locale.value === lang)

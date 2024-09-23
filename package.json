@@ -18,6 +18,8 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "lucide-vue-next": "^0.445.0",
+    "neverthrow": "^8.0.0",
+    "pinia": "^2.2.2",
     "radix-vue": "^1.9.6",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",

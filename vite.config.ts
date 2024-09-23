@@ -56,10 +56,13 @@ export default defineConfig({
       imports: [
         'vue',
         '@vueuse/core',
+        'pinia',
+        'vue-i18n',
         VueRouterAutoImports,
         {
           // add any other imports you were relying on
           'vue-router/auto': ['useLink'],
+          '@tanstack/vue-query': ['useQuery', 'useQueryClient'],
         },
       ],
       dts: true,

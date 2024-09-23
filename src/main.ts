@@ -1,7 +1,7 @@
 import { type App, createApp } from 'vue'
 import AppSFC from './App.vue'
 
-import './styles/main.css'
+import './styles/main.scss'
 
 const app = createApp(AppSFC)
 
