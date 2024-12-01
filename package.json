@@ -11,6 +11,7 @@
     "up": "taze major -I"
   },
   "dependencies": {
+    "@primevue/themes": "^4.2.4",
     "@tanstack/vue-query": "^5.62.0",
     "@vueuse/core": "^12.0.0",
     "class-variance-authority": "^0.7.1",
@@ -19,6 +20,7 @@
     "lucide-vue-next": "^0.462.0",
     "neverthrow": "^8.1.1",
     "pinia": "^2.2.8",
+    "primevue": "^4.2.4",
     "radix-vue": "^1.9.10",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
@@ -32,6 +34,7 @@
     "@egoist/tailwindcss-icons": "^1.8.1",
     "@iconify-json/carbon": "^1.2.4",
     "@iconify-json/line-md": "^1.2.2",
+    "@primevue/auto-import-resolver": "^4.2.4",
     "@tanstack/vue-query-devtools": "^5.62.0",
     "@types/node": "^22.10.1",
     "@vitejs/plugin-vue": "^5.2.1",

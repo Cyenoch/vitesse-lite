@@ -1,5 +1,6 @@
-import Vue from '@vitejs/plugin-vue'
+import { PrimeVueResolver } from '@primevue/auto-import-resolver'
 
+import Vue from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer'
 import tailwind from 'tailwindcss'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -75,7 +76,7 @@ export default defineConfig({
       dts: true,
       directoryAsNamespace: true,
       collapseSamePrefixes: true,
-      globalNamespaces: ['ui'],
+      resolvers: [PrimeVueResolver()],
     }),
 
     // https://devtools-next.vuejs.org

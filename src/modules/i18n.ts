@@ -13,7 +13,7 @@ const i18n = createI18n({
 })
 
 const localesMap = Object.fromEntries(
-  Object.entries(import.meta.glob('../../locales/*.json'))
+  Object.entries(import.meta.glob('../locales/*.json'))
     .map(([path, loadLocale]) => {
       return [path.match(/([\w-]*)\.json/)?.[1], loadLocale]
     }),
@@ -46,6 +46,7 @@ export async function loadLanguageAsync(lang: AvailableLocale): Promise<Availabl
   const messages = await localesMap[lang]()
   i18n.global.setLocaleMessage(lang, messages.default)
   loadedLanguages.push(lang)
+
   return setI18nLanguage(lang)
 }
 
