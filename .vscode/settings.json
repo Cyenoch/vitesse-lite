@@ -1,10 +1,7 @@
 {
   "files.associations": {
-    "*.css": "postcss"
+    "*.css": "tailwindcss"
   },
-  "editor.linkedEditing": true,
-  "javascript.preferences.renameMatchingJsxTags": true,
-  "typescript.preferences.renameMatchingJsxTags": true,
 
   "unocss.disable": true,
 
@@ -54,10 +51,12 @@
     "yaml",
     "css",
     "scss",
-    "postcss"
+    "postcss",
+    "tailwindcss"
   ],
 
-  "typescript.preferences.autoImportFileExcludePatterns": [
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": [
+    "^dayjs$",
     "@antfu/eslint-config",
     "@vitejs/plugin-vue",
     "@vue-macros/volar",
@@ -68,7 +67,17 @@
     "unplugin-*",
     "vite*",
     "vue-tsc",
-    "clsx",
-    "dayjs"
+    "clsx"
   ],
+
+  // Vue 开发相关配置
+  "vue.inlayHints.optionsWrapper": false,
+  "vue.complete.casing.props": "kebab",
+  "vue.updateImportsOnFileMove.enabled": true,
+
+  // TypeScript 相关优化
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
 }

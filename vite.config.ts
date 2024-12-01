@@ -1,5 +1,3 @@
-/// <reference types="vitest" />
-
 import Vue from '@vitejs/plugin-vue'
 
 import autoprefixer from 'autoprefixer'
@@ -97,9 +95,4 @@ export default defineConfig({
 
     TurboConsole({}),
   ],
-
-  // https://github.com/vitest-dev/vitest
-  test: {
-    environment: 'jsdom',
-  },
 })

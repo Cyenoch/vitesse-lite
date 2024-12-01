@@ -6,7 +6,7 @@ import './styles/main.scss'
 const app = createApp(AppSFC)
 
 Object.values(
-  import.meta.glob<{ install: (app: App) => void }>('./lib/modules/*.ts', {
+  import.meta.glob<{ install: (app: App) => void }>('./modules/*.ts', {
     eager: true,
   }),
 ).forEach(({
