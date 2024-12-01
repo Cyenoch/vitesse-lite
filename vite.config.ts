@@ -26,6 +26,7 @@ export default defineConfig({
       },
     },
   },
+
   plugins: [
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
@@ -96,4 +97,36 @@ export default defineConfig({
 
     TurboConsole({}),
   ],
+
+  build: {
+    rollupOptions: {
+      output: {
+        // manualChunks(id) {
+        //   if (id.includes('node_modules')) {
+        //     if (0
+        //       || id.includes('/primevue')
+        //       || id.includes('/@primevue')
+        //       || id.includes('/vue')
+        //       || id.includes('/@vue')
+        //       || id.includes('/@vueuse')
+        //       || id.includes('/pinia')) {
+        //       return 'vendor'
+        //     }
+        //     return 'deps'
+        //   }
+        //   if (id.includes('/src/modules/')) {
+        //     return 'modules'
+        //   }
+        //   if (id.includes('/src/pages/')) {
+        //     const pageName = id.split('/src/pages/')[1].split('/')[0].split('?')[0]
+        //     return `page-${pageName}`
+        //   }
+        //   if (id.includes('/src/components/')) {
+        //     const componentName = id.split('/src/components/')[1].split('/')[0].split('?')[0]
+        //     return `component-${componentName}`
+        //   }
+        // },
+      },
+    },
+  },
 })
