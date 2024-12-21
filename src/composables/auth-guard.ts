@@ -1,5 +1,4 @@
 import { useQueryClient } from '@tanstack/vue-query'
-import { fromAsyncThrowable } from 'neverthrow'
 import { useUserInfoQueryOptions } from './api'
 
 export function useAuthGuard() {
@@ -18,11 +17,8 @@ export function useAuthGuard() {
 
     // ensure user info loaded
     const queryClient = useQueryClient()
-    const ensureData = fromAsyncThrowable(async () => {
-      await queryClient.ensureQueryData(useUserInfoQueryOptions())
-    })
 
-    return await ensureData().match(() => {
+    return await queryClient.ensureQueryData(useUserInfoQueryOptions()).then(() => {
       return true
     }, () => {
       // login expired clear login status
