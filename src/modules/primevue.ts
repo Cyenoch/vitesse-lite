@@ -11,7 +11,10 @@ export function install(app: App) {
         semantic: {
           colorScheme: {
             light: {
-
+              primary: {
+                color: '#e99a46',
+                contrastColor: '#ffffff'
+              }
             },
           },
         },
