@@ -13,13 +13,17 @@ export function install(app: App) {
             light: {
               primary: {
                 color: '#e99a46',
-                contrastColor: '#ffffff'
-              }
+                contrastColor: '#ffffff',
+              },
             },
           },
         },
       }),
       options: {
+        cssLayer: {
+          name: 'primevue',
+          order: 'tailwind-base, primevue, tailwind-utilities',
+        },
         darkModeSelector: '.dark',
       },
     },
