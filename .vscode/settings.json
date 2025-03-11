@@ -55,7 +55,18 @@
     "tailwindcss"
   ],
 
-  "typescript.preferences.autoImportSpecifierExcludeRegexes": [
+  // Vue 开发相关配置
+  "vue.inlayHints.optionsWrapper": false,
+  "vue.complete.casing.props": "kebab",
+  "vue.updateImportsOnFileMove.enabled": true,
+
+  // TypeScript 相关优化
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "vue-router/auto$",
     "^dayjs$",
     "@antfu/eslint-config",
     "@vitejs/plugin-vue",
@@ -68,16 +79,5 @@
     "vite*",
     "vue-tsc",
     "clsx"
-  ],
-
-  // Vue 开发相关配置
-  "vue.inlayHints.optionsWrapper": false,
-  "vue.complete.casing.props": "kebab",
-  "vue.updateImportsOnFileMove.enabled": true,
-
-  // TypeScript 相关优化
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  ]
 }
