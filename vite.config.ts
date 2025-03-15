@@ -18,7 +18,7 @@ import TsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   css: {
     postcss: {
-      plugins: [tailwind(), autoprefixer()],
+      plugins: [tailwind() as any, autoprefixer()],
     },
     preprocessorOptions: {
       scss: {
@@ -99,6 +99,10 @@ export default defineConfig({
   ],
 
   build: {
+    minify: 'terser',
+    terserOptions: {
+      safari10: true,
+    },
     rollupOptions: {
       output: {
         // manualChunks(id) {
