@@ -11,6 +11,9 @@
   "prettier.enable": false,
   "editor.formatOnSave": false,
 
+  // Enable the eslint formatter
+  "eslint.format.enable": true,
+
   // Auto fix
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
