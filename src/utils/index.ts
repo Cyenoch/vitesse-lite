@@ -1,1 +1,1 @@
-export * from './day'
+// eslint-disable-next-line no-empty-file

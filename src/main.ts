@@ -2,6 +2,7 @@ import { type App, createApp } from 'vue'
 import AppSFC from './App.vue'
 
 import './styles/main.scss'
+import './utils/day'
 
 const app = createApp(AppSFC)
 

@@ -70,7 +70,6 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "typescript.preferences.autoImportFileExcludePatterns": [
     "vue-router/auto$",
-    "^dayjs$",
     "@antfu/eslint-config",
     "@vitejs/plugin-vue",
     "@vue-macros/volar",
