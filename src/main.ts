@@ -1,8 +1,9 @@
-import { type App, createApp } from 'vue'
+import type { App } from 'vue'
+import { createApp } from 'vue'
 import AppSFC from './App.vue'
 
 import './styles/main.scss'
-import './utils/day'
+import './utils/dayjs'
 
 const app = createApp(AppSFC)
 

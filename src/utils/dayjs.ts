@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-named-default
 import dayjs from 'dayjs'
 
 import duration from 'dayjs/plugin/duration'
@@ -10,3 +9,5 @@ dayjs.extend(duration)
 dayjs.extend(utc)
 dayjs.extend(timezone)
 dayjs.extend(relative)
+
+export default dayjs

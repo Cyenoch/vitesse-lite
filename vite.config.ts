@@ -63,6 +63,7 @@ export default defineConfig({
           // add any other imports you were relying on
           'vue-router/auto': ['useLink'],
           '@tanstack/vue-query': ['useQuery', 'useQueryClient'],
+          '@/utils/dayjs': [['default', 'dayjs']],
         },
       ],
       dts: true,
