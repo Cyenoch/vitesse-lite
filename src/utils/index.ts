@@ -1,1 +1,1 @@
-// eslint-disable-next-line no-empty-file
+// oxlint-disable-next-line no-empty-file
