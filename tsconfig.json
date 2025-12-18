@@ -24,12 +24,6 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": [
-    "./src/**/*",
-    "./*.d.ts",
-    "./vite.config.ts"
-  ],
-  "exclude": [
-    "./src/assets/**/*"
-  ]
+  "include": ["./src/**/*", "./*.d.ts", "./vite.config.ts"],
+  "exclude": ["./src/assets/**/*"]
 }

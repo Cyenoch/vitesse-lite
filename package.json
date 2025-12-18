@@ -1,14 +1,17 @@
 {
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "dev": "vite --port 3333 --open",
     "lint": "oxlint .",
-    "lint:fix": "oxfmt . --fix",
+    "lint:fix": "oxfmt .",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "up": "taze major -I"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@latest"
   },
   "dependencies": {
     "@primeuix/themes": "^2.0.2",
@@ -49,9 +52,6 @@
     "vite-svg-loader": "^5.1.0",
     "vite-tsconfig-paths": "^6.0.2",
     "vue-tsc": "^3.1.8"
-  },
-  "overrides": {
-    "vite": "npm:rolldown-vite@latest"
   },
   "browserslist": {
     "production": [

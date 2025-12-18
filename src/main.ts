@@ -1,20 +1,16 @@
-import type { App } from 'vue'
-import { createApp } from 'vue'
-import AppSFC from './App.vue'
+import type { App } from "vue";
+import { createApp } from "vue";
+import AppSFC from "./App.vue";
 
-import './styles/main.css'
-import './utils/dayjs'
+import "./styles/main.css";
+import "./utils/dayjs";
 
-const app = createApp(AppSFC)
+const app = createApp(AppSFC);
 
 Object.values(
-  import.meta.glob<{ install: (app: App) => void }>('./modules/*.ts', {
+  import.meta.glob<{ install: (app: App) => void }>("./modules/*.ts", {
     eager: true,
   }),
-).forEach(({
-  install,
-}) =>
-  install(app),
-)
+).forEach(({ install }) => install(app));
 
-app.mount('#app')
+app.mount("#app");

@@ -1,15 +1,15 @@
-import Vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
-import TurboConsole from 'unplugin-turbo-console/vite'
-import Components from 'unplugin-vue-components/vite'
-import VueMacros from 'unplugin-vue-macros/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
-import { defineConfig } from 'vite'
-import VueDevTools from 'vite-plugin-vue-devtools'
-import Layouts from 'vite-plugin-vue-layouts'
-import SvgLoader from 'vite-svg-loader'
-import TsconfigPaths from 'vite-tsconfig-paths'
+import Vue from "@vitejs/plugin-vue";
+import AutoImport from "unplugin-auto-import/vite";
+import TurboConsole from "unplugin-turbo-console/vite";
+import Components from "unplugin-vue-components/vite";
+import VueMacros from "unplugin-vue-macros/vite";
+import { VueRouterAutoImports } from "unplugin-vue-router";
+import VueRouter from "unplugin-vue-router/vite";
+import { defineConfig } from "vite";
+import VueDevTools from "vite-plugin-vue-devtools";
+import Layouts from "vite-plugin-vue-layouts";
+import SvgLoader from "vite-svg-loader";
+import TsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   experimental: {
@@ -17,7 +17,7 @@ export default defineConfig({
   },
 
   build: {
-    target: 'es2015'
+    target: "es2015",
   },
 
   plugins: [
@@ -47,22 +47,20 @@ export default defineConfig({
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
-        'vue',
-        '@vueuse/core',
-        'pinia',
-        'vue-i18n',
+        "vue",
+        "@vueuse/core",
+        "pinia",
+        "vue-i18n",
         VueRouterAutoImports,
         {
           // add any other imports you were relying on
-          'vue-router/auto': ['useLink'],
-          '@tanstack/vue-query': ['useQuery', 'useQueryClient'],
-          '@/utils/dayjs': [['default', 'dayjs']],
+          "vue-router/auto": ["useLink"],
+          "@tanstack/vue-query": ["useQuery", "useQueryClient"],
+          "@/utils/dayjs": [["default", "dayjs"]],
         },
       ],
       dts: true,
-      dirs: [
-        './src/composables',
-      ],
+      dirs: ["./src/composables"],
       vueTemplate: true,
     }),
 
@@ -79,15 +77,13 @@ export default defineConfig({
     TsconfigPaths(),
 
     SvgLoader({
-      defaultImport: 'component',
+      defaultImport: "component",
       svgo: true,
       svgoConfig: {
-        plugins: [
-          'preset-default',
-        ],
+        plugins: ["preset-default"],
       },
     }),
 
     TurboConsole({}),
   ],
-})
+});
