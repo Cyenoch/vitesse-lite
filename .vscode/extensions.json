@@ -2,11 +2,10 @@
   "recommendations": [
     "antfu.vite",
     "antfu.iconify",
-    "antfu.unocss",
     "antfu.goto-alias",
     "vue.volar",
-    "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
-    "antfu.file-nesting"
+    "antfu.file-nesting",
+    "oxc.oxc-vscode"
   ]
 }

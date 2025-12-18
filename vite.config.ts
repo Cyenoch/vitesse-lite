@@ -1,8 +1,4 @@
-import { PrimeVueResolver } from '@primevue/auto-import-resolver'
-
 import Vue from '@vitejs/plugin-vue'
-import autoprefixer from 'autoprefixer'
-import tailwind from 'tailwindcss'
 import AutoImport from 'unplugin-auto-import/vite'
 import TurboConsole from 'unplugin-turbo-console/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -16,15 +12,12 @@ import SvgLoader from 'vite-svg-loader'
 import TsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [tailwind() as any, autoprefixer()],
-    },
-    preprocessorOptions: {
-      scss: {
-        api: 'modern',
-      },
-    },
+  experimental: {
+    enableNativePlugin: true,
+  },
+
+  build: {
+    target: 'es2015'
   },
 
   plugins: [
@@ -78,7 +71,6 @@ export default defineConfig({
       dts: true,
       directoryAsNamespace: true,
       collapseSamePrefixes: true,
-      resolvers: [PrimeVueResolver()],
     }),
 
     // https://devtools-next.vuejs.org
@@ -98,40 +90,4 @@ export default defineConfig({
 
     TurboConsole({}),
   ],
-
-  build: {
-    minify: 'terser',
-    terserOptions: {
-      safari10: true,
-    },
-    rollupOptions: {
-      output: {
-        // manualChunks(id) {
-        //   if (id.includes('node_modules')) {
-        //     if (0
-        //       || id.includes('/primevue')
-        //       || id.includes('/@primevue')
-        //       || id.includes('/vue')
-        //       || id.includes('/@vue')
-        //       || id.includes('/@vueuse')
-        //       || id.includes('/pinia')) {
-        //       return 'vendor'
-        //     }
-        //     return 'deps'
-        //   }
-        //   if (id.includes('/src/modules/')) {
-        //     return 'modules'
-        //   }
-        //   if (id.includes('/src/pages/')) {
-        //     const pageName = id.split('/src/pages/')[1].split('/')[0].split('?')[0]
-        //     return `page-${pageName}`
-        //   }
-        //   if (id.includes('/src/components/')) {
-        //     const componentName = id.split('/src/components/')[1].split('/')[0].split('?')[0]
-        //     return `component-${componentName}`
-        //   }
-        // },
-      },
-    },
-  },
 })
