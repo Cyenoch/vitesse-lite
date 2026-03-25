@@ -61,6 +61,8 @@ vp dev
 vp check
 vp test
 vp build
+vp lint
+vp fmt
 ```
 
 ## Replace the mock API

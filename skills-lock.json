@@ -16,6 +16,11 @@
       "sourceType": "github",
       "computedHash": "318f9fca2441a3e06fedc336e195dd18be5dbe901064e4fa71b76b40b096ab3a"
     },
+    "primevue": {
+      "source": "kindy/skills",
+      "sourceType": "github",
+      "computedHash": "8c8fc1a48e793fbf149971ea2626292710e4232be7efef443c19d3b78014772d"
+    },
     "unocss": {
       "source": "antfu/skills",
       "sourceType": "github",

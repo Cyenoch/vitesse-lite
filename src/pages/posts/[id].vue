@@ -4,7 +4,7 @@ import { useRoute } from "vue-router";
 import { posts } from "@/data/posts";
 import { usePostQuery } from "@/composables";
 
-const route = useRoute();
+const route = useRoute("/posts/[id]");
 const postId = computed(() => {
   const value = route.params.id;
   return Array.isArray(value) ? value[0] : value;

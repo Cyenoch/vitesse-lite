@@ -15,9 +15,15 @@ importers:
       '@pinia/colada':
         specifier: ^1.0.0
         version: 1.0.0(pinia@3.0.4(typescript@6.0.2)(vue@3.5.30(typescript@6.0.2)))(vue@3.5.30(typescript@6.0.2))
+      '@primeuix/themes':
+        specifier: ^2.0.3
+        version: 2.0.3
       pinia:
         specifier: ^3.0.4
         version: 3.0.4(typescript@6.0.2)(vue@3.5.30(typescript@6.0.2))
+      primevue:
+        specifier: ^4.5.4
+        version: 4.5.4(vue@3.5.30(typescript@6.0.2))
       vue:
         specifier: ^3.5.30
         version: 3.5.30(typescript@6.0.2)
@@ -31,6 +37,9 @@ importers:
       '@iconify-json/line-md':
         specifier: ^1.2.16
         version: 1.2.16
+      '@primevue/auto-import-resolver':
+        specifier: ^4.5.4
+        version: 4.5.4
       '@tailwindcss/postcss':
         specifier: ^4.2.2
         version: 4.2.2
@@ -64,6 +73,9 @@ importers:
       unplugin-turbo-console:
         specifier: ^2.3.0
         version: 2.3.0(@voidzero-dev/vite-plus-core@0.1.14(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)(terser@5.46.1)(typescript@6.0.2)(yaml@2.8.3))(esbuild@0.27.4)(rollup@4.60.0)(vue@3.5.30(typescript@6.0.2))
+      unplugin-vue-components:
+        specifier: ^32.0.0
+        version: 32.0.0(vue@3.5.30(typescript@6.0.2))
       vite:
         specifier: npm:@voidzero-dev/vite-plus-core@latest
         version: '@voidzero-dev/vite-plus-core@0.1.14(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)(terser@5.46.1)(typescript@6.0.2)(yaml@2.8.3)'
@@ -1540,6 +1552,38 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
+  '@primeuix/styled@0.7.4':
+    resolution: {integrity: sha512-QSO/NpOQg8e9BONWRBx9y8VGMCMYz0J/uKfNJEya/RGEu7ARx0oYW0ugI1N3/KB1AAvyGxzKBzGImbwg0KUiOQ==}
+    engines: {node: '>=12.11.0'}
+
+  '@primeuix/styles@2.0.3':
+    resolution: {integrity: sha512-2ykAB6BaHzR/6TwF8ShpJTsZrid6cVIEBVlookSdvOdmlWuevGu5vWOScgIwqWwlZcvkFYAGR/SUV3OHCTBMdw==}
+
+  '@primeuix/themes@2.0.3':
+    resolution: {integrity: sha512-3fS1883mtCWhgUgNf/feiaaDSOND4EBIOu9tZnzJlJ8QtYyL6eFLcA6V3ymCWqLVXQ1+lTVEZv1gl47FIdXReg==}
+
+  '@primeuix/utils@0.6.4':
+    resolution: {integrity: sha512-pZ5f+vj7wSzRhC7KoEQRU5fvYAe+RP9+m39CTscZ3UywCD1Y2o6Fe1rRgklMPSkzUcty2jzkA0zMYkiJBD1hgg==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/auto-import-resolver@4.5.4':
+    resolution: {integrity: sha512-YQHrZ9PQSG/4K2BwthA2Xuna4WyS0JMHajiHD9PljaDyQtBVwCadX5ZpKcrAUWR8E/1gjva8x/si0RYxxYrRJw==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/core@4.5.4':
+    resolution: {integrity: sha512-lYJJB3wTrDJ8MkLctzHfrPZAqXVxoatjIsswSJzupatf6ZogJHVYADUKcn1JAkLLk8dtV1FA2AxDek663fHO5Q==}
+    engines: {node: '>=12.11.0'}
+    peerDependencies:
+      vue: ^3.5.0
+
+  '@primevue/icons@4.5.4':
+    resolution: {integrity: sha512-DxgryEc7ZmUqcEhYMcxGBRyFzdtLIoy3jLtlH1zsVSRZaG+iSAcjQ88nvfkZxGUZtZBFL7sRjF6KLq3bJZJwUw==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/metadata@4.5.4':
+    resolution: {integrity: sha512-jJFD0KYm8bPYgFo0JP3Dc2RkyXzrMI1XHQGsEKTysx9Jx2d1XdxtFji/ZsQeoo/RmwUNof5ciZ72URq37rnK+g==}
+    engines: {node: '>=12.11.0'}
+
   '@rolldown/pluginutils@1.0.0-rc.2':
     resolution: {integrity: sha512-izyXV/v+cHiRfozX62W9htOAvwMo4/bXKDrQ+vom1L1qRuexPock/7VZDAhnpHCLNejd3NJ6hiab+tO0D44Rgw==}
 
@@ -2827,6 +2871,10 @@ packages:
     resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
     engines: {node: ^10 || ^12 || >=14}
 
+  primevue@4.5.4:
+    resolution: {integrity: sha512-nTyEohZABFJhVIpeUxgP0EJ8vKcJAhD+Z7DYj95e7ie/MNUCjRNcGjqmE1cXtXi4z54qDfTSI9h2uJ51qz2DIw==}
+    engines: {node: '>=12.11.0'}
+
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -3089,6 +3137,16 @@ packages:
   unplugin-utils@0.3.1:
     resolution: {integrity: sha512-5lWVjgi6vuHhJ526bI4nlCOmkCIF3nnfXkCMDeMJrtdvxTs6ZFCM8oNufGTsDbKv/tJ/xj8RpvXjRuPBZJuJog==}
     engines: {node: '>=20.19.0'}
+
+  unplugin-vue-components@32.0.0:
+    resolution: {integrity: sha512-uLdccgS7mf3pv1bCCP20y/hm+u1eOjAmygVkh+Oa70MPkzgl1eQv1L0CwdHNM3gscO8/GDMGIET98Ja47CBbZg==}
+    engines: {node: '>=20.19.0'}
+    peerDependencies:
+      '@nuxt/kit': ^3.2.2 || ^4.0.0
+      vue: ^3.0.0
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
 
   unplugin@2.3.11:
     resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
@@ -4612,6 +4670,39 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
+  '@primeuix/styled@0.7.4':
+    dependencies:
+      '@primeuix/utils': 0.6.4
+
+  '@primeuix/styles@2.0.3':
+    dependencies:
+      '@primeuix/styled': 0.7.4
+
+  '@primeuix/themes@2.0.3':
+    dependencies:
+      '@primeuix/styled': 0.7.4
+
+  '@primeuix/utils@0.6.4': {}
+
+  '@primevue/auto-import-resolver@4.5.4':
+    dependencies:
+      '@primevue/metadata': 4.5.4
+
+  '@primevue/core@4.5.4(vue@3.5.30(typescript@6.0.2))':
+    dependencies:
+      '@primeuix/styled': 0.7.4
+      '@primeuix/utils': 0.6.4
+      vue: 3.5.30(typescript@6.0.2)
+
+  '@primevue/icons@4.5.4(vue@3.5.30(typescript@6.0.2))':
+    dependencies:
+      '@primeuix/utils': 0.6.4
+      '@primevue/core': 4.5.4(vue@3.5.30(typescript@6.0.2))
+    transitivePeerDependencies:
+      - vue
+
+  '@primevue/metadata@4.5.4': {}
+
   '@rolldown/pluginutils@1.0.0-rc.2': {}
 
   '@rollup/rollup-android-arm-eabi@4.60.0':
@@ -5921,6 +6012,16 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
+  primevue@4.5.4(vue@3.5.30(typescript@6.0.2)):
+    dependencies:
+      '@primeuix/styled': 0.7.4
+      '@primeuix/styles': 2.0.3
+      '@primeuix/utils': 0.6.4
+      '@primevue/core': 4.5.4(vue@3.5.30(typescript@6.0.2))
+      '@primevue/icons': 4.5.4(vue@3.5.30(typescript@6.0.2))
+    transitivePeerDependencies:
+      - vue
+
   punycode@2.3.1:
     optional: true
 
@@ -6178,6 +6279,19 @@ snapshots:
     dependencies:
       pathe: 2.0.3
       picomatch: 4.0.4
+
+  unplugin-vue-components@32.0.0(vue@3.5.30(typescript@6.0.2)):
+    dependencies:
+      chokidar: 5.0.0
+      local-pkg: 1.1.2
+      magic-string: 0.30.21
+      mlly: 1.8.2
+      obug: 2.1.1
+      picomatch: 4.0.4
+      tinyglobby: 0.2.15
+      unplugin: 3.0.0
+      unplugin-utils: 0.3.1
+      vue: 3.5.30(typescript@6.0.2)
 
   unplugin@2.3.11:
     dependencies:

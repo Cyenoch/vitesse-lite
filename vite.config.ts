@@ -1,6 +1,8 @@
 import Legacy from "@vitejs/plugin-legacy";
 import Vue from "@vitejs/plugin-vue";
+import { PrimeVueResolver } from "@primevue/auto-import-resolver";
 import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 import TurboConsole from "unplugin-turbo-console/vite";
 import { VueRouterAutoImports } from "vue-router/unplugin";
 import VueRouter from "vue-router/vite";
@@ -58,6 +60,11 @@ export default defineConfig(() => {
         dts: "src/types/auto-imports.d.ts",
         dirs: ["./src/composables"],
         vueTemplate: true,
+      }),
+
+      Components({
+        dts: "src/types/components.d.ts",
+        resolvers: [PrimeVueResolver()],
       }),
 
       ...(isTest ? [] : [VueDevTools()]),

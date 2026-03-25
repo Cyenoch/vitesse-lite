@@ -6,7 +6,6 @@
   "prettier.enable": false,
   "eslint.enable": false,
   "oxc.enable": true,
-  "oxc.fmt.experimental": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.oxc": "explicit",
     "source.organizeImports": "never"
@@ -15,22 +14,19 @@
     "strings": true
   },
   "vue.inlayHints.optionsWrapper": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
   "editor.defaultFormatter": "oxc.oxc-vscode",
-  "typescript.preferences.autoImportFileExcludePatterns": [
+  "js/ts.preferences.autoImportFileExcludePatterns": [
     "vue-router/auto$",
     "@vitejs/plugin-vue",
     "@vue-macros/volar",
-    "oxc*",
-    "jsdom",
-    "taze",
     "unplugin-*",
     "vite*",
-    "vue-tsc",
-    "clsx"
+    "vue-tsc"
   ],
   "oxc.fmt.configPath": "./vite.config.ts",
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "file"
+  "editor.formatOnSaveMode": "file",
+  "js/ts.experimental.useTsgo": false
 }

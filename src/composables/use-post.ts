@@ -10,7 +10,7 @@ export function usePostQuery(postId: MaybeRefOrGetter<string | string[] | undefi
   });
 
   return useQuery({
-    key: () => ["posts", normalizedPostId.value],
+    key: () => ["posts", `${normalizedPostId.value}`],
     enabled: () => Boolean(normalizedPostId.value),
     query: () => getPostById(normalizedPostId.value!),
   });
