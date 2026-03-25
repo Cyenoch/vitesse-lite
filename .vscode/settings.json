@@ -2,34 +2,21 @@
   "files.associations": {
     "*.css": "tailwindcss"
   },
-
   "unocss.disable": true,
-
-  // Disable the default formatter
   "prettier.enable": false,
   "eslint.enable": false,
-
-  // Enable the oxc
   "oxc.enable": true,
   "oxc.fmt.experimental": true,
-
-  // Auto fix
   "editor.codeActionsOnSave": {
     "source.fixAll.oxc": "explicit",
     "source.organizeImports": "never"
   },
-
   "editor.quickSuggestions": {
     "strings": true
   },
-
-  // Vue 开发相关配置
   "vue.inlayHints.optionsWrapper": false,
-
-  // TypeScript 相关优化
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "typescript.preferences.autoImportFileExcludePatterns": [
     "vue-router/auto$",
@@ -42,5 +29,8 @@
     "vite*",
     "vue-tsc",
     "clsx"
-  ]
+  ],
+  "oxc.fmt.configPath": "./vite.config.ts",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file"
 }

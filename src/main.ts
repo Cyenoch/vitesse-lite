@@ -3,7 +3,6 @@ import { createApp } from "vue";
 import AppSFC from "./App.vue";
 
 import "./styles/main.css";
-import "./utils/dayjs";
 
 const app = createApp(AppSFC);
 

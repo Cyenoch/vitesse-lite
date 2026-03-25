@@ -3,19 +3,13 @@
     "target": "es2016",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
-    "ignoreDeprecations": "6.0",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
       "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
-    "types": [
-      "vite/client",
-      "unplugin-vue-macros/macros-global",
-      "vite-plugin-vue-layouts/client"
-    ],
+    "types": ["vite-plus/client"],
     "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
@@ -24,6 +18,6 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["./src/**/*", "./*.d.ts", "./vite.config.ts"],
+  "include": ["./src/**/*", "./vite.config.ts"],
   "exclude": ["./src/assets/**/*"]
 }

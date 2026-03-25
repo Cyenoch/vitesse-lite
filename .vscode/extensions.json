@@ -6,6 +6,7 @@
     "vue.volar",
     "EditorConfig.EditorConfig",
     "antfu.file-nesting",
-    "oxc.oxc-vscode"
+    "oxc.oxc-vscode",
+    "VoidZero.vite-plus-extension-pack"
   ]
 }

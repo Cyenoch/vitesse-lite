@@ -1,85 +1,76 @@
+import Legacy from "@vitejs/plugin-legacy";
 import Vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import TurboConsole from "unplugin-turbo-console/vite";
-import Components from "unplugin-vue-components/vite";
-import VueMacros from "unplugin-vue-macros/vite";
 import { VueRouterAutoImports } from "vue-router/unplugin";
 import VueRouter from "vue-router/vite";
-import { defineConfig } from "vite";
+import { defineConfig } from "vite-plus";
 import VueDevTools from "vite-plugin-vue-devtools";
-import Layouts from "vite-plugin-vue-layouts";
 import SvgLoader from "vite-svg-loader";
-import TsconfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
-  build: {
-    target: "es2015",
-  },
+export default defineConfig(() => {
+  const isTest = process.env.VITEST === "true";
 
-  plugins: [
-    // https://router.vuejs.org/guide/file-based-routing.html
-    VueRouter({
-      dts: "src/route-map.d.ts",
-    }),
+  return {
+    resolve: {
+      tsconfigPaths: true,
+    },
+    test: {
+      passWithNoTests: true,
+    },
 
-    VueMacros({
-      defineOptions: false,
-      defineModels: false,
-      // not compatible with Shadcn Vue
-      betterDefine: false,
-      plugins: {
-        vue: Vue({
-          script: {
-            propsDestructure: true,
-            defineModel: true,
-          },
-        }),
-      },
-    }),
-
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
-
-    // https://github.com/antfu/unplugin-auto-import
-    AutoImport({
-      imports: [
-        "vue",
-        "@vueuse/core",
-        "pinia",
-        "vue-i18n",
-        VueRouterAutoImports,
-        {
-          // add any other imports you were relying on
-          "vue-router/auto": ["useLink"],
-          "@tanstack/vue-query": ["useQuery", "useQueryClient"],
-          "@/utils/dayjs": [["default", "dayjs"]],
+    server: {
+      proxy: {
+        "^/api": {
+          target: process.env.API_PROXY_TARGET || "http://localhost:3000",
+          changeOrigin: true,
+          secure: false,
         },
-      ],
-      dts: true,
-      dirs: ["./src/composables"],
-      vueTemplate: true,
-    }),
-
-    // https://github.com/antfu/vite-plugin-components
-    Components({
-      dts: true,
-      directoryAsNamespace: true,
-      collapseSamePrefixes: true,
-    }),
-
-    // https://devtools-next.vuejs.org
-    VueDevTools(),
-
-    TsconfigPaths(),
-
-    SvgLoader({
-      defaultImport: "component",
-      svgo: true,
-      svgoConfig: {
-        plugins: ["preset-default"],
       },
-    }),
+    },
 
-    TurboConsole({}),
-  ],
+    plugins: [
+      // Share the same browser targets with Browserslist-based tooling.
+      Legacy(),
+
+      // https://router.vuejs.org/guide/file-based-routing.html
+      VueRouter({
+        dts: "src/types/route-map.d.ts",
+      }),
+
+      Vue({
+        script: {
+          propsDestructure: true,
+          defineModel: true,
+        },
+      }),
+
+      // https://github.com/antfu/unplugin-auto-import
+      AutoImport({
+        imports: [
+          "vue",
+          "pinia",
+          VueRouterAutoImports,
+          {
+            "vue-router/auto": ["useLink"],
+          },
+        ],
+        dts: "src/types/auto-imports.d.ts",
+        dirs: ["./src/composables"],
+        vueTemplate: true,
+      }),
+
+      ...(isTest ? [] : [VueDevTools()]),
+
+      SvgLoader({
+        defaultImport: "component",
+        svgo: true,
+        svgoConfig: {
+          plugins: ["preset-default"],
+        },
+      }),
+
+      ...(isTest ? [] : [TurboConsole({})]),
+    ],
+  };
 });

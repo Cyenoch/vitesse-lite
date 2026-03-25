@@ -1,15 +1,5 @@
-<script setup>
-import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
-</script>
-
 <template>
-  <main>
+  <main class="min-h-screen">
     <RouterView />
-    <VueQueryDevtools />
   </main>
 </template>
-
-<route lang="yaml">
-meta:
-  layout: empty
-</route>

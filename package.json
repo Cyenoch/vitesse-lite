@@ -2,61 +2,51 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite --port 3333 --open",
-    "lint": "oxlint .",
-    "lint:fix": "oxfmt .",
-    "typecheck": "vue-tsc --noEmit",
-    "preview": "vite preview",
-    "up": "taze major -I"
-  },
-  "overrides": {
-    "vite": "npm:rolldown-vite@latest"
+    "build": "vp build",
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "dev": "vp dev --port 3333 --open",
+    "lint": "vp lint",
+    "preview": "vp preview",
+    "typecheck": "vp check --no-fmt --no-lint"
   },
   "dependencies": {
-    "@primeuix/themes": "^2.0.3",
-    "@tanstack/vue-query": "^5.95.2",
-    "@vueuse/core": "^14.2.1",
-    "dayjs": "^1.11.20",
+    "@pinia/colada": "^1.0.0",
     "pinia": "^3.0.4",
     "vue": "^3.5.30",
-    "vue-i18n": "^11.3.0",
-    "vue-router": "^5.0.4",
-    "vue-sonner": "^2.0.9"
+    "vue-router": "^5.0.4"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.2.19",
     "@iconify-json/line-md": "^1.2.16",
     "@tailwindcss/postcss": "^4.2.2",
-    "@tanstack/vue-query-devtools": "^6.1.10",
     "@types/node": "^25.5.0",
+    "@vitejs/plugin-legacy": "^8.0.0",
     "@vitejs/plugin-vue": "^6.0.5",
-    "@vue-macros/volar": "^3.1.2",
-    "@vue/test-utils": "^2.4.6",
-    "jsdom": "^29.0.1",
-    "oxfmt": "^0.42.0",
-    "oxlint": "^1.57.0",
     "postcss": "^8.5.8",
     "postcss-preset-env": "^11.2.0",
     "tailwindcss": "^4.2.2",
-    "taze": "^19.10.0",
+    "terser": "^5.46.1",
     "typescript": "^6.0.2",
     "unplugin-auto-import": "^21.0.0",
     "unplugin-turbo-console": "^2.3.0",
-    "unplugin-vue-components": "^32.0.0",
-    "unplugin-vue-macros": "^2.14.5",
-    "vite": "^8.0.2",
+    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
     "vite-plugin-vue-devtools": "^8.1.1",
-    "vite-plugin-vue-layouts": "^0.11.0",
+    "vite-plus": "latest",
     "vite-svg-loader": "^5.1.1",
-    "vite-tsconfig-paths": "^6.1.1",
     "vue-tsc": "^3.2.6"
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
   },
   "browserslist": {
     "production": [
+      "defaults",
+      "not IE 11",
       "Android >= 8",
-      "iOS >= 13",
-      "> 0.3%",
+      "iOS >= 12",
+      "Safari >= 12",
       "not dead",
       "not op_mini all"
     ],
@@ -64,6 +54,21 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    },
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "vite": "*"
+      }
+    },
+    "onlyBuiltDependencies": [
+      "vue-demi"
     ]
   }
 }
