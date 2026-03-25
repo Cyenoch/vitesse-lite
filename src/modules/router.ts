@@ -1,7 +1,7 @@
 import type { App } from "vue";
-import type { RouteRecordRaw } from "vue-router/auto";
+import type { RouteRecordRaw } from "vue-router";
 import { setupLayouts } from "virtual:generated-layouts";
-import { createRouter, createWebHistory } from "vue-router/auto";
+import { createRouter, createWebHistory } from "vue-router";
 import { handleHotUpdate, routes } from "vue-router/auto-routes";
 
 function generateLayoutsRoutes(originRoutes: RouteRecordRaw[]) {

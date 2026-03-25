@@ -3,8 +3,8 @@ import AutoImport from "unplugin-auto-import/vite";
 import TurboConsole from "unplugin-turbo-console/vite";
 import Components from "unplugin-vue-components/vite";
 import VueMacros from "unplugin-vue-macros/vite";
-import { VueRouterAutoImports } from "unplugin-vue-router";
-import VueRouter from "unplugin-vue-router/vite";
+import { VueRouterAutoImports } from "vue-router/unplugin";
+import VueRouter from "vue-router/vite";
 import { defineConfig } from "vite";
 import VueDevTools from "vite-plugin-vue-devtools";
 import Layouts from "vite-plugin-vue-layouts";
@@ -12,18 +12,14 @@ import SvgLoader from "vite-svg-loader";
 import TsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  experimental: {
-    enableNativePlugin: true,
-  },
-
   build: {
     target: "es2015",
   },
 
   plugins: [
-    // https://github.com/posva/unplugin-vue-router
+    // https://router.vuejs.org/guide/file-based-routing.html
     VueRouter({
-      /* options */
+      dts: "src/route-map.d.ts",
     }),
 
     VueMacros({

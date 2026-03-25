@@ -4,6 +4,7 @@
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
@@ -13,7 +14,6 @@
     "types": [
       "vite/client",
       "unplugin-vue-macros/macros-global",
-      "unplugin-vue-router/client",
       "vite-plugin-vue-layouts/client"
     ],
     "allowJs": true,
